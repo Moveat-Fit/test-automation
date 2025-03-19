@@ -1,0 +1,31 @@
+# Node.js dependencies
+node_modules/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Cypress output and cache
+cypress/screenshots/
+cypress/videos/
+cypress/downloads/
+cypress/results/
+cypress/support/utils/*.js # Se houver arquivos auxiliares gerados dinamicamente
+
+# VS Code settings
+.vscode/
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Cypress binary cache (opcional, se quiser baixar sempre do zero)
+~/.cache/Cypress/
+cypress/cache/
+
+# Relatórios de teste (caso use mochawesome ou Allure)
+mochawesome-report/
+allure-results/
+allure-report/
