@@ -12,50 +12,30 @@ const gerarSenha = () => {
     return (maiuscula+minuscula+numero+especial+restante).split('').sort(() => 0.5 - Math.random()).join('');
 }
 
+
+// Função genérica para gerar dados básicos
+const gerarDadosBasicos = () => {
+    return {
+        nome: fakerPT_BR.person.fullName(),
+        email: fakerPT_BR.internet.email(),
+        cpf: fakerPT_BR.string.numeric(11),
+        telefone: fakerPT_BR.phone.number(),
+        senha: gerarSenha()
+    };
+};
+
 // Função de gerar dados de um Personal
 export const gerarDadosPersonalTrainer = () => {
     return {
-        nome: fakerPT_BR.person.fullName().replace('.',''),
-        cref: fakerPT_BR.helpers.fromRegExp('[0-9]{6}-G/SP').toUpperCase(), //Ex: 0000/SP
-        email: fakerPT_BR.internet.email(),
-        cpf: fakerPT_BR.string.numeric(11),
-        telefone: fakerPT_BR.string.numeric(11),
-        senha: gerarSenha()
+        ...gerarDadosBasicos(),
+        cref: fakerPT_BR.helpers.fromRegExp('[0-9]{6}-G/SP').toUpperCase() //Ex: 0000/SP
     };
 };
 
 // Função de gerar dados de um Nutricionista
 export const gerarDadosNutricionista = () => {
     return {
-        nome: fakerPT_BR.person.fullName(),
-        crn: fakerPT_BR.string.numeric(5), //Ex: 00000
-        email: fakerPT_BR.internet.email(),
-        cpf: fakerPT_BR.string.numeric(11),
-        telefone: fakerPT_BR.phone.number(),
-        senha: gerarSenha()
-    };
-};
-
-/*
-// Função de gerar dados de um Paciente
-export const gerarDadosPaciente = () => {
-    return {
-        nome: fakerPT_BR.person.fullName(),
-        email: fakerPT_BR.internet.email(),
-        cpf: fakerPT_BR.string.numeric(11),
-        telefone: fakerPT_BR.phone.number(),
-        senha: gerarSenha()
-    };
-};
-*/
-
-// Função de gerar dados inválidos (Campos vazios)
-export const gerarDadosEmBranco = () => {
-    return {
-        nome: '',
-        email: '',
-        cpf: '',
-        telefone: '',
-        senha: ''
+        ...gerarDadosBasicos(),
+        crn: fakerPT_BR.string.numeric(5) //Ex: 00000
     };
 };
