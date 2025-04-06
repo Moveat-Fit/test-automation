@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
   projectId: 'pci2sy',
@@ -9,7 +10,8 @@ module.exports = defineConfig({
     defaultCommandTimeout: 8000,
 
     setupNodeEvents(on, config) {
-      // implement node event listeners here
+      allureWriter(on, config); // Configura o Allure
+      return config;
     },
   },
 });

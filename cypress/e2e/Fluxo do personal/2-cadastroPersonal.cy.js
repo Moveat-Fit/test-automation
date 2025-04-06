@@ -23,7 +23,7 @@ describe('Cadastro do Personal', () => {
         CadastroPage.preencheConfirmarSenha(dados.senha);
     };
 
-    it('Cadastro com dados válidos', () => {
+    it.only('Cadastro com dados válidos', () => {
         preencherFormulario(personal);
         CadastroPage.btnCadastrar();
 

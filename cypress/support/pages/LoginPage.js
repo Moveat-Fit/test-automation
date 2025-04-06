@@ -5,6 +5,10 @@ class LoginPage {
         cy.visit('/login')
     }
 
+    selecionaNutricionista() {
+        cy.contains('button', 'Profissional').click();
+    }
+
     preencheEmail(email) {
         cy.get('#login').type(email);
     }

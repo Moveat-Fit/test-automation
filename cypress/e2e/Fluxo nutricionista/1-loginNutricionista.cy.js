@@ -10,11 +10,12 @@ describe('Tela de Login', () => {
   it('Login com credenciais válidas', () => {
     
     // Usando comando personalizado de login
-    cy.login(login.emailCorreto, login.senhaCorreta);
+    cy.loginNutricionista(login.emailCorreto, login.senhaCorreta);
 
     // Validando o redirecionamento
     cy.url().should('include', '/dashboard');
-    cy.contains('Logou').should('be.visible');
+    cy.contains('Dashboard').should('be.visible');
+    cy.contains('Gerencie seus pacientes e registros de forma eficiente').should('be.visible');
   });
   
 
