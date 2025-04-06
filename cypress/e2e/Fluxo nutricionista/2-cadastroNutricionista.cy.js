@@ -37,7 +37,7 @@ describe('Cadastro do nutricionista', () => {
         CadastroPage.btnCadastrar();
 
         // Validando
-        cy.contains('E-mail já está cadastrado', {timeout: 10000}).should('be.visible');
+        cy.contains('Email, CPF ou número de telefone já registrado', {timeout: 10000}).should('be.visible');
     });
 
     it('Tentativa de cadastro com dados em branco', () => {

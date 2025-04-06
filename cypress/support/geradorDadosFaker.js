@@ -19,7 +19,7 @@ const gerarDadosBasicos = () => {
         nome: fakerPT_BR.person.fullName(),
         email: fakerPT_BR.internet.email(),
         cpf: fakerPT_BR.string.numeric(11),
-        telefone: fakerPT_BR.phone.number(11),
+        telefone: fakerPT_BR.string.number(11),
         senha: gerarSenha()
     };
 };
