@@ -45,7 +45,7 @@ class CadastroPage {
     }
 
     btnCadastrar(){
-        cy.contains('button', 'Criar').click();
+        cy.contains('button', 'Cadastrar').click();
     }
     btnLogar(){
         cy.contains('button', 'Já possuo uma conta').click();

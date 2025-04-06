@@ -33,7 +33,7 @@ describe('Cadastro do nutricionista', () => {
     });
 
     it('Tentativa de cadastro com email existente', () => {
-        preencherFormulario({...nutricionista, email:'admin@moveat'}); // Sobrescrevendo o email
+        preencherFormulario({...nutricionista, email:'admin@moveat.com'}); // Sobrescrevendo o email
         CadastroPage.btnCadastrar();
 
         // Validando

@@ -21,12 +21,12 @@ describe('Tela de Login', () => {
 
   /* TESTES NEGATIVOS */
   it('Tentativa de login com email não cadastrado', () => {
-    cy.login(login.emailIncorreto, login.senhaCorreta)
+    cy.loginNutricionista(login.emailIncorreto, login.senhaCorreta)
     cy.contains('E-mail e/ou senha inválidos', {timeout: 10000}).should('be.visible');
   });
 
   it('Tentativa de login com senha incorreta', () => {
-    cy.login(login.emailCorreto, login.senhaIncorreta)
+    cy.loginNutricionista(login.emailCorreto, login.senhaIncorreta)
     cy.contains('E-mail e/ou senha inválidos', {timeout: 10000}).should('be.visible');
   });
 });

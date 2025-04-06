@@ -16,7 +16,7 @@ describe('Validando tratamento de senha', () => {
         // Validações
         cy.get('svg.text-red-500').should('be.visible'); // Valida que a cor vermelha está presente
         cy.contains('Senha precisa ter no mínimo 8 dígitos').should('be.visible'); // Valida o texto
-        cy.contains('button', 'Criar').should('be.disabled'); // Valida que o botão "Criar" está indisponível
+        cy.contains('button', 'Cadastrar').should('be.disabled'); // Valida que o botão "Cadastrar" está indisponível
     });
 
     it('Deve exibir erro quando a senha não tiver caracteres especiais', () => {
@@ -25,7 +25,7 @@ describe('Validando tratamento de senha', () => {
 
         cy.get('svg.text-red-500').should('be.visible');
         cy.contains('Senha precisa ter caracteres especiais').should('be.visible'); 
-        cy.contains('button', 'Criar').should('be.disabled');
+        cy.contains('button', 'Cadastrar').should('be.disabled');
     });
 
     it('Deve exibir erro quando a senha não tiver letras maiúsuclas', () => {
@@ -34,7 +34,7 @@ describe('Validando tratamento de senha', () => {
 
         cy.get('svg.text-red-500').should('be.visible');
         cy.contains('Senha precisa ter letras maiúsculas e minúsculas').should('be.visible'); 
-        cy.contains('button', 'Criar').should('be.disabled');
+        cy.contains('button', 'Cadastrar').should('be.disabled');
     });
 
     it('Deve exibir erro quando as senhas não coincidirem', () => {
@@ -43,6 +43,6 @@ describe('Validando tratamento de senha', () => {
 
         cy.get('svg.text-red-500').should('be.visible');
         cy.contains('As senhas precisam coincidir').should('be.visible');
-        cy.contains('button', 'Criar').should('be.disabled');
+        cy.contains('button', 'Cadastrar').should('be.disabled');
     });
 });
