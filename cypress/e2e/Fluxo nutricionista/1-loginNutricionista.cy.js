@@ -10,7 +10,7 @@ describe('Tela de Login', () => {
   it('Login com credenciais válidas', () => {
     
     // Usando comando personalizado de login
-    cy.loginNutricionista(login.emailCorreto, login.senhaCorreta);
+    cy.loginProfissional(login.emailCorreto, login.senhaCorreta);
 
     // Validando o redirecionamento
     cy.url().should('include', '/dashboard');

@@ -5,7 +5,7 @@ class LoginPage {
         cy.visit('/login')
     }
 
-    selecionaNutricionista() {
+    selecionaProfissional() {
         cy.contains('button', 'Profissional').click();
     }
 
