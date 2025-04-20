@@ -1,7 +1,9 @@
 export const dadosLogin = () => {
     return {
-        emailCorreto: 'admin@moveat.com',
-        senhaCorreta: 'Admin123!',
+        emailNutricionista: 'admin@moveat.com',
+        senhaNutricionista: 'Admin123!',
+        emailPersonal: 'admin@moveat.com',
+        senhaPersonal: 'Admin123!',
         emailIncorreto: 'incorreto@email.com',
         senhaIncorreta: 'erradademais'
     };
