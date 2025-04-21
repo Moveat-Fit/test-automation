@@ -39,3 +39,14 @@ export const gerarDadosNutricionista = () => {
         crn: fakerPT_BR.string.numeric(5) //Ex: 00000
     };
 };
+
+// Função de gerar dados de um Paciente (Tela Nutricionista)
+export const gerarDadosPaciente = () => {
+    return {
+        ...gerarDadosBasicos(),
+        sobrenome: fakerPT_BR.person.lastName(),
+        peso: fakerPT_BR.string.numeric(2, {allowLeadingZeros: true}) + '.' + fakerPT_BR.string.numeric(1), //Ex: 00.0
+        altura: fakerPT_BR.string.numeric(1) + '.' + fakerPT_BR.string.numeric(2), //Ex: 0.00
+        observacoes: fakerPT_BR.lorem.paragraph(1) //Ex: Lorem ipsum dolor sit amet, consectetur adipiscing elit.   
+    };
+}

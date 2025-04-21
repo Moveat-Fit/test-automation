@@ -1,7 +1,30 @@
-/*/// <reference types="cypress" />
+/// <reference types="cypress" />
 
-beforeEach(() => {
-    
-});*/
+import { dadosLogin } from "../../support/dadosLogin";
+import DashboardNutriPage from "../../support/pages/DashboardNutriPage";
+import { gerarDadosPaciente } from '../../support/geradorDadosFaker';
 
-//TODO: Criar um arquivo de dados para o cadastro do paciente e criar os testes de cadastro do paciente
+describe('Dashboard do Nutricionista', () => {
+    const login = dadosLogin();
+    const paciente = gerarDadosPaciente();
+
+    beforeEach(() => {
+        cy.loginProfissional(login.emailNutricionista, login.senhaNutricionista);
+    });
+
+    it('Cadastro com dados válidos', () => {
+        DashboardNutriPage.selecionaCadastroPaciente();
+
+        DashboardNutriPage.preencheNomePaciente(paciente.nome);
+        DashboardNutriPage.preencheSobrenomePaciente(paciente.sobrenome);
+        DashboardNutriPage.preencheEmailPaciente(paciente.email);
+        DashboardNutriPage.preencheSenhaPaciente(paciente.senha);
+        DashboardNutriPage.preencheTelefonePaciente(paciente.telefone);
+        DashboardNutriPage.preenchePesoPaciente(paciente.peso);
+        DashboardNutriPage.preencheAlturaPaciente(paciente.altura);
+        DashboardNutriPage.preencheCpfPaciente(paciente.cpf);
+        DashboardNutriPage.preencheObservacoesPaciente(paciente.observacoes);
+        DashboardNutriPage.selecionaDataAleatoria();
+        DashboardNutriPage.selecionaSexoPaciente();
+    });
+});
