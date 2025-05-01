@@ -29,7 +29,7 @@ describe('Dashboard do Nutricionista - Leitura de pacientes', () => {
     });
 
     /* TESTE NEGATIVO */
-    it.only('Tentativa de pesquisa por nome inexistente', () => {
+    it('Tentativa de pesquisa por nome inexistente', () => {
         LeituraPaciente.selecionaVerPacientes();
 
         LeituraPaciente.selecionaCampoPesquisa();
