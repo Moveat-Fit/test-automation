@@ -46,7 +46,7 @@ export const gerarDadosPaciente = () => {
         ...gerarDadosBasicos(),
         sobrenome: fakerPT_BR.person.lastName(),
         peso: fakerPT_BR.string.numeric(2, {allowLeadingZeros: true}) + '.' + fakerPT_BR.string.numeric(1), //Ex: 00.0
-        altura: fakerPT_BR.string.numeric(1) + '.' + fakerPT_BR.string.numeric(2), //Ex: 0.00
+        altura: '1.' + fakerPT_BR.string.numeric(2, {allowLeadingZeros: true}), //Ex: 1.00 até 1.99
         observacoes: fakerPT_BR.lorem.paragraph(1) //Ex: Lorem ipsum dolor sit amet, consectetur adipiscing elit.   
     };
 }

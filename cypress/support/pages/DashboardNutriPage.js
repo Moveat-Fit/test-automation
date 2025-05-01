@@ -1,7 +1,7 @@
 /* Ações específicas da página Dashboard do nutricionista */
 import { faker } from '@faker-js/faker';
 
-class DashboardNutriPage {
+class CadastroPaciente {
     selecionaCadastroPaciente() {
         cy.contains('button', 'Cadastrar novo paciente').click();
     }
@@ -62,6 +62,10 @@ class DashboardNutriPage {
         // Seleciona o radio button correspondente
         cy.get(`button[value="${sexoAleatorio}"]`).click();
     }
+
+    btnCadastrar() {
+        cy.contains('button', 'Cadastrar').click();
+    }
 }
 
-export default new DashboardNutriPage();
+export default new CadastroPaciente();
