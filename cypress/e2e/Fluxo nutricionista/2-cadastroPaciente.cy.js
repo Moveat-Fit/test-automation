@@ -2,7 +2,7 @@
 
 import { dadosLogin } from "../../support/dadosLogin";
 import { gerarDadosPaciente } from '../../support/geradorDadosFaker';
-import CadastroPaciente from "../../support/pages/DashboardNutriPage";
+import CadastroPaciente from "../../support/pages/DashboardNutricionista/CadastroPaciente";
 
 describe('Dashboard do Nutricionista', () => {
     const login = dadosLogin();
@@ -30,7 +30,7 @@ describe('Dashboard do Nutricionista', () => {
         CadastroPaciente.btnCadastrar();
 
         cy.contains('Paciente cadastrado com sucesso!', {timeout: 10000}).should('be.visible');
-        cy.contains('Pacientes').should('be.visible');
+        cy.contains('Gerencie e veja as informações de seus pacientes').should('be.visible');
     });
 
     /* TESTES NEGATIVOS */
