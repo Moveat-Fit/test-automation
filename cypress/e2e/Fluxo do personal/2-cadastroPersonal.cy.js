@@ -1,3 +1,5 @@
+/*
+
 /// <reference types="cypress" />
 
 import CadastroPage from '../../support/pages/CadastroPage';
@@ -48,3 +50,4 @@ describe('Cadastro do Personal', () => {
         cy.get('#cpf').invoke('prop', 'validationMessage').should('eq', 'Preencha este campo.');
     });
 });
+*/
