@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "npx cypress open",
-    "chrome": "npx cypress run --browser chrome"
+    "testCloud": "npx cypress run --browser chrome --record --key f1d8586d-bd92-43aa-bbb5-e3188181ba49"
   },
   "keywords": [],
   "author": "",
