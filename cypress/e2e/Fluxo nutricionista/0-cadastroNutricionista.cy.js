@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-import CadastroPage from '../../support/pages/CadastroPage';
+import CadastroPage from '../../support/pages/Autenticacao/CadastroPage';
 import { gerarDadosNutricionista } from '../../support/geradorDadosFaker';
 
 
