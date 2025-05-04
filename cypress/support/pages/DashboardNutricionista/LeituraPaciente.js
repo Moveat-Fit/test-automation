@@ -1,8 +1,5 @@
 /* Ações específicas da página Dashboard do nutricionista */
 class LeituraPaciente {
-    selecionaVerPacientes() {
-        cy.contains('button', 'Ver todos os pacientes').click();
-    }
 
     selecionaCampoPesquisa() {
         cy.get('.relative > .border-input').click();

@@ -13,16 +13,12 @@ describe('Dashboard do Nutricionista - Leitura de pacientes', () => {
 
     /* TESTES POSITIVOS */
     it('Pesquisa pelo nome completo', () => {
-        LeituraPaciente.selecionaVerPacientes();
-
         LeituraPaciente.selecionaCampoPesquisa();
         LeituraPaciente.preencheCampoPesquisa('Salamaleico');
         cy.contains('Salamaleico Da Silva').should('be.visible');
     });
 
     it('Pesquisa pelo nome parcialmente', () => {
-        LeituraPaciente.selecionaVerPacientes();
-
         LeituraPaciente.selecionaCampoPesquisa();
         LeituraPaciente.preencheCampoPesquisa('Ca');
         cy.contains('Ca').should('be.visible');
@@ -30,8 +26,6 @@ describe('Dashboard do Nutricionista - Leitura de pacientes', () => {
 
     /* TESTE NEGATIVO */
     it('Tentativa de pesquisa por nome inexistente', () => {
-        LeituraPaciente.selecionaVerPacientes();
-
         LeituraPaciente.selecionaCampoPesquisa();
         LeituraPaciente.preencheCampoPesquisa('Sabrina Anchieta');
         cy.contains('Nenhum paciente encontrado').should('be.visible');
