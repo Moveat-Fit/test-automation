@@ -18,11 +18,11 @@ describe('Dashboard do Nutricionista - Remover pacientes', () => {
         cy.contains('Paciente removido com sucesso!').should('be.visible');
     });
 
-    /* TESTE NEGATIVO */
     it('Cancela a exclusão de um paciente', () => {
         RemoverPaciente.selecionaRemoverPaciente();
         cy.contains('Você tem certeza que deseja excluir?').should('be.visible');
         RemoverPaciente.selecionarBtnCancelar();
         cy.contains('Paciente removido com sucesso!').should('not.exist');
     });
+    
 });
