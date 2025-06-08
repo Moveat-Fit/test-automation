@@ -9,6 +9,10 @@ class LoginPage {
         cy.contains('button', 'Profissional').click();
     }
 
+    selecionaPaciente() {
+        cy.contains('button', 'Paciente')
+    }
+
     preencheEmail(email) {
         cy.get('#login').type(email);
     }

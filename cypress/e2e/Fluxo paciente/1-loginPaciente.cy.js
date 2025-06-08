@@ -2,7 +2,7 @@
 
 import { dadosLogin } from "../../support/dadosLogin";
 
-describe('Tela de Login Nutricionista', () => {
+describe('Tela de Login Paciente', () => {
 
   const login = dadosLogin();
   
@@ -10,23 +10,23 @@ describe('Tela de Login Nutricionista', () => {
   it('Login com credenciais válidas', () => {
     
     // Usando comando personalizado de login
-    cy.loginProfissional(login.emailNutricionista, login.senhaNutricionista);
+    cy.loginPaciente(login.emailPacienteComPlano, login.senhaPacienteComPlano);
 
     // Validando o redirecionamento
-    cy.url().should('include', '/dashboard');
-    cy.contains('Meus Pacientes').should('be.visible');
-    cy.contains('Gerencie e veja as informações de seus pacientes').should('be.visible');
+    cy.url().should('include', '/dashboard/patient');
+    cy.contains(login.emailPacienteComPlano).should('be.visible');
+    cy.contains('Idade:').should('be.visible');
   });
   
 
   /* TESTES NEGATIVOS */
   it('Tentativa de login com email não cadastrado', () => {
-    cy.loginProfissional(login.emailIncorreto, login.senhaNutricionista)
+    cy.loginPaciente(login.emailIncorreto, login.senhaPacienteComPlano)
     cy.contains('Credenciais inválidas', {timeout: 10000}).should('be.visible');
   });
 
   it('Tentativa de login com senha incorreta', () => {
-    cy.loginProfissional(login.emailNutricionista, login.senhaIncorreta)
+    cy.loginPaciente(login.emailPacienteComPlano, login.senhaIncorreta)
     cy.contains('Credenciais inválidas', {timeout: 10000}).should('be.visible');
   });
 });

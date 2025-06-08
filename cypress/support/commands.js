@@ -8,3 +8,11 @@ Cypress.Commands.add('loginProfissional', (email, senha) => {
     LoginPage.preencheSenha(senha);
     LoginPage.btnEntrar();
 })
+
+Cypress.Commands.add('loginPaciente', (email, senha) => {
+    LoginPage.visitLogin();
+    LoginPage.selecionaPaciente();
+    LoginPage.preencheEmail(email);
+    LoginPage.preencheSenha(senha);
+    LoginPage.btnEntrar();
+})
