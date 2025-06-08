@@ -4,13 +4,13 @@ class CadastroPage {
         cy.visit('/register')
     }
 
-    // Selecionar tipo de usuário
+    /* Selecionar tipo de usuário
     selecionaPersonalTrainer(){
         cy.get('#Personal\\ Trainer').click();
     }
     selecionaNutricionista(){
         cy.get('#Nutricionista').click();
-    }
+    }*/
 
     /*
     selecionaPaciente(){

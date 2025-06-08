@@ -14,8 +14,8 @@ describe('Dashboard do Nutricionista - Leitura de pacientes', () => {
     /* TESTES POSITIVOS */
     it('Pesquisa pelo nome completo', () => {
         LeituraPaciente.selecionaCampoPesquisa();
-        LeituraPaciente.preencheCampoPesquisa('Salamaleico');
-        cy.contains('Salamaleico Da Silva').should('be.visible');
+        LeituraPaciente.preencheCampoPesquisa('Novo Nome Novo Sobrenome');
+        cy.contains('Novo Nome Novo Sobrenome').should('be.visible');
     });
 
     it('Pesquisa pelo nome parcialmente', () => {

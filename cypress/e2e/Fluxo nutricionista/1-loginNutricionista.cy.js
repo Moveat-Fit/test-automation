@@ -14,7 +14,7 @@ describe('Tela de Login', () => {
 
     // Validando o redirecionamento
     cy.url().should('include', '/dashboard');
-    cy.contains('Dashboard').should('be.visible');
+    cy.contains('Meus Pacientes').should('be.visible');
     cy.contains('Gerencie e veja as informações de seus pacientes').should('be.visible');
   });
   

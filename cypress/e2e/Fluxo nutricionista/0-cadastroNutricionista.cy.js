@@ -10,7 +10,7 @@ describe('Cadastro do nutricionista', () => {
 
     beforeEach(() => {
         CadastroPage.visitCadastro();
-        CadastroPage.selecionaNutricionista(); // Checkbox nutricionista
+        //CadastroPage.selecionaNutricionista(); // Checkbox nutricionista
     });
 
     const preencherFormulario = (dados) => {

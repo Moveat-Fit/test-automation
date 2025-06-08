@@ -44,7 +44,7 @@ describe('Dashboard do Nutricionista - Atualizar dados cadastrais dos pacientes'
         cy.contains('Email já registrado').should('be.visible');
     });
 
-    it.only('Validar tratamento de erro para campos em branco', () => {
+    it('Validar tratamento de erro para campos em branco', () => {
         EditarPaciente.selecionaEditarPacienteAleatorio();
         EditarPaciente.editarCampoTelefoneVazio();
         EditarPaciente.editarCampoCpfVazio();
