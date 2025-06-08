@@ -21,10 +21,10 @@ class CriarPlano {
 
         cy.get('[data-testid="input-endDatePlan"]').click();
         const mesFimAleatorio = faker.number.int({ min: 0, max: 11 });
-        const anoFimAleatorio = faker.number.int({ min: 2025, max: 2026 });
+        const anoFim = 2026;
         const diaFimAleatorio = faker.number.int({ min: 1, max: 28 });
         cy.get('select[name="months"]').select(`${mesFimAleatorio}`);
-        cy.get('select[name="years"]').select(`${anoFimAleatorio}`);
+        cy.get('select[name="years"]').select(`${anoFim}`);
         cy.get('button[name="day"]').contains(diaFimAleatorio).click();
         cy.get('[data-testid="input-endDatePlan"]').click();
     }

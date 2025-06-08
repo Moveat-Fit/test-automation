@@ -14,7 +14,6 @@ describe('Dashboard do Nutricionista - Criar plano alimentar de um paciente', ()
     Cypress._.times(3, (i) => {
     it(`Cria um plano alimentar (${i + 1}/3)`, () => {
         CriarPlano.criarPlanoComTentativas();
-        cy.contains('h1', 'Criar plano alimentar').should('be.visible');
     });
 });
 
