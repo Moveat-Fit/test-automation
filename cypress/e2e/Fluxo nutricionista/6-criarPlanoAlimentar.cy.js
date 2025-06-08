@@ -14,6 +14,7 @@ describe('Dashboard do Nutricionista - Criar plano alimentar de um paciente', ()
     Cypress._.times(3, (i) => {
     it(`Cria um plano alimentar (${i + 1}/3)`, () => {
         CriarPlano.criarPlanoComTentativas();
+        cy.contains('h1', 'Criar plano alimentar').should('be.visible');
     });
 });
 
@@ -29,7 +30,7 @@ describe('Dashboard do Nutricionista - Criar plano alimentar de um paciente', ()
         
         cy.contains('Nome do plano é obrigatório').should('be.visible');
         cy.contains('Data de início é obrigatória').should('be.visible');
-        //cy.contains('Data de término é obrigatória').should('be.visible');
+        cy.contains('Data de término é obrigatória').should('be.visible');
         cy.contains('Selecionar um alimento é obrigatório').should('be.visible');
         cy.contains('Porção é obrigatória').should('be.visible');
     });
