@@ -3,7 +3,7 @@
 import { dadosLogin } from "../../support/dadosLogin";
 import CriarPlano from "../../support/pages/PlanoAlimentar/CriarPlano";
 
-describe('Dashboard do Nutricionista - Atualizar dados cadastrais dos pacientes', () => {
+describe('Dashboard do Nutricionista - Criar plano alimentar de um paciente', () => {
     const login = dadosLogin();
     
     beforeEach(() => {
@@ -11,17 +11,11 @@ describe('Dashboard do Nutricionista - Atualizar dados cadastrais dos pacientes'
     });
 
     /* TESTES POSITIVOS */
-    it('Cria um plano alimentar', () => {
-        CriarPlano.selecionarBtnCriarPlano();
-        cy.contains('h1', 'Criar plano alimentar').should('be.visible');
-        CriarPlano.preencheDetalhesPlano();
-        CriarPlano.selecionaBtnAddRefeicao();
-        CriarPlano.preencheRefeicao();
-        CriarPlano.selecionaBtnAddAlimento();
-        CriarPlano.preencheAlimento();
-        CriarPlano.selecionaBtnSalvarPlano();
-        cy.contains('Plano alimentar criado com sucesso').should('be.visible');
+    Cypress._.times(3, (i) => {
+    it(`Cria um plano alimentar (${i + 1}/3)`, () => {
+        CriarPlano.criarPlanoComTentativas();
     });
+});
 
     /* TESTES NEGATIVOS */
     it('Validar tratamento de erro para plano com campos obrigatórios em branco', () => {
