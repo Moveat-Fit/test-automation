@@ -39,7 +39,7 @@ Recomenda-se também ter Node.js (16+) e npm/yarn instalados.
 2. Execute o Cypress com o comando:
 
 ```bash
-npx cypress open
+npm run test
 ```
 
 3. Na interface do Cypress, selecione o arquivo de teste desejado para rodar os testes.
@@ -47,7 +47,7 @@ npx cypress open
 Ou, para rodar todos os testes em modo headless:
 
 ```bash
-npx cypress run
+npm run testCloud
 ```
 
 ## Funcionalidades Testadas
